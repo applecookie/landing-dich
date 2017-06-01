@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic-ext');
+@import url('http://allfont.ru/allfont.css?fonts=europe-bold-italic');
+
+$bg-default: #fff;
+$font-color: #000;
+$font-color-inverse: #fff;
+
+$primary-color: #eb8e22;
+$secondary-color: #ffce00;
+
+@keyframes shake {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+body {
+  min-width: 320px;
+  background: $bg-default;
+  color: $font-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1;
+  font-weight: 400;
+  margin: 0;
+  small {
+    color: inherit;
+    display: block;
+  }
+}
+
+.text-up {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.page-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.dich-logo {
+  display: flex;
+  background: url("../img/logo.svg") no-repeat;
+  background-size: 7em;
+  padding-left: 7.86em;
+  margin-top: 2.1em;
+  h1 {
+    text-transform: uppercase;
+    margin: .5em 0;
+    font-size: 1.2em;
+    line-height: 1.7;
+    border-left: .15em solid $font-color;
+    padding: 0 .5em .5em;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.get-dich {
+  display: inline-flex;
+  a {
+    height: 1em;
+    &:first-of-type {
+      margin-right: .96em;
+    }
+    display: flex;
+    &:hover, &:focus {
+      animation-name: shake;
+      animation-duration: 0.8s;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+.dich-more {
+  display: inline-block;
+  font-weight: 300;
+  font-size: .8em;
+  text-transform: uppercase;
+  color: $font-color;
+  transition: all .5s;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0;
+  img {
+    display: block;
+    margin: .5em auto 1.35em;
+    width: 2.12em;
+  }
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    color: $font-color;
+    bottom: -5px;
+  }
+}
+
+.dich-btn {
+  font-family: "Europe Bold Italic", Roboto, sans-serif;
+  padding: 1.3em;
+  text-transform: uppercase;
+  background: $primary-color;
+  color: $font-color-inverse;
+  display: inline-block;
+  border-radius: .8em;
+  box-shadow: 0 .2em 0 $font-color;
+  transition: all .3s;
+  will-change: transform;
+  &:hover {
+    text-decoration: none;
+    color: $font-color-inverse;
+    box-shadow: 0 .03em .1em $font-color;
+    transform: scale(1.1);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  }
+}
+
+.dich-section {
+  &._1{
+    background: url("../img/section1-bg.png") no-repeat center, linear-gradient(to bottom, $primary-color, $secondary-color);
+    background-size: cover, contain;
+    //.page-container {
+    //  background: url("../img/section1-img.png") no-repeat calc(100% - 15px) 100%;
+    //  background-size: contain;
+    //}
+    h2 {
+      font-size: 6em;
+      text-transform: uppercase;
+      font-family: "Europe Bold Italic", Roboto, sans-serif;
+      transform: rotate(-8deg);
+      margin-top: 0.93em;
+      span {
+        display: block;
+      }
+      small {
+        font-size: 0.3625em;
+        margin-top: 1em;
+        margin-left: .9em;
+        letter-spacing: .03em;
+      }
+    }
+    .get-dich {
+      font-size: 2.2em;
+      margin-top: 5.95em;
+      margin-bottom: 1em;
+    }
+  }
+  &._2 {
+    .page-container {
+      flex-direction: row;
+      height: 37.5em;
+    }
+    .dich-video {
+      background: url("../img/video-bg.png") no-repeat 0 100%;
+      background-size: contain;
+      flex: 5;
+      position: relative;
+      iframe {
+        position: absolute;
+        display: none;
+      }
+      .play {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url("../img/play.svg") no-repeat center 54%;
+        background-size: 4em;
+        transition: .2s all;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+      &.shown {
+        iframe {
+          display: block;
+        }
+        .play {
+          display: none;
+        }
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18.1%;
+        bottom: 0;
+        background: url("../img/left-hand.png") no-repeat 0 100%;
+        background-size: contain;
+        z-index: 2;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 20.5%;
+        right: 0;
+        bottom: 0;
+        background: url("../img/right-hand.png") no-repeat 100% 100%;
+        background-size: contain;
+        z-index: 2;
+      }
+    }
+    .hgroup {
+      flex: 3;
+      padding-left: 8em;
+      margin-top: 5.7em;
+      background: url("../img/section2-arrows.png") no-repeat 0 45%;
+      background-size: 10em;
+      margin-left: -2em;
+      h2 {
+        font-size: 2.4em;
+        margin-top: 1.75em;
+        margin-bottom: .3em;
+        font-weight: 700;
+      }
+      p {
+        font-size: 1.4em;
+      }
+      .dich-push-video {
+        background: url("../img/section2-text-bg.png") no-repeat;
+        background-size: contain;
+        font-size: 2.3em;
+        line-height: .8;
+        width: 10.2em;
+        height: 4em;
+        margin-top: .4em;
+        span {
+          text-align: center;
+          transform: rotate(-8deg) translate(35%, 76%);
+          display: inline-block;
+          font-family: "Europe Bold Italic", Roboto, sans-serif;
+        }
+      }
+    }
+  }
+  &._3 {
+    background: url("../img/section3-bg.png") no-repeat center, linear-gradient(to bottom, $primary-color, $secondary-color);
+    background-size: cover, contain;
+    padding: 4em 0 2.5em;
+    .page-container {
+      background: url("../img/section3-img.png") no-repeat 90% 0;
+      background-size: contain;
+    }
+    .hgroup {
+      width: 63.5%;
+      padding-left: 8em;
+      h2 {
+        font-family: "Europe Bold Italic", Roboto, sans-serif;
+        font-size: 1.5em;
+        margin: 3.4em 0 1.4em;
+        text-align: right;
+      }
+    }
+    .dich-sounds {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+      flex-wrap: wrap;
+      margin: 2em 0 2.5em;
+      li {
+        margin-bottom: .5em;
+        opacity: .8;
+        height: 6em;
+        flex: 0 0 33%;
+        position: relative;
+        transition: all .3s;
+        background-repeat: no-repeat;
+        background-position: 90% center, 0 center;
+        background-size: 3em, contain;
+        &:nth-child(1) {
+          background-image: url("../img/play.svg"), url("../img/3-1.svg");
+        }
+        &:nth-child(2) {
+          background-image: url("../img/play.svg"), url("../img/3-2.svg");
+        }
+        &:nth-child(3) {
+          background-image: url("../img/play.svg"), url("../img/3-3.svg");
+        }
+        &:nth-child(4) {
+          background-image: url("../img/play.svg"), url("../img/3-4.png");
+        }
+        &:nth-child(5) {
+          background-image: url("../img/play.svg"), url("../img/3-5.svg");
+        }
+        &:nth-child(6) {
+          background-image: url("../img/play.svg"), url("../img/3-6.svg");
+        }
+        &:hover {
+          opacity: 1;
+          background-position: 85% center, 5% center;
+          background-size: 2.5em, contain;
+        }
+      }
+    }
+  }
+  &._4 {
+    .hgroup {
+      font-size: 1.3em;
+      font-family: "Europe Bold Italic", Roboto, sans-serif;
+      margin: 4.6em 0 2em;
+      line-height: 1.1;
+      p {
+        margin: 0 0 .9em;
+      }
+      .pull-right {
+        text-align: right;
+        small {
+          font-size: .67em;
+          display: block;
+          margin-bottom: 1.2em;
+        }
+        .get-dich {
+          font-size: 1.7em;
+        }
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 7em;
+      display: flex;
+      li {
+        position: relative;
+        p {
+          margin: .5em 0 0;
+          font-size: 1.1em;
+          line-height: 1.3;
+          white-space: pre;
+          text-transform: uppercase;
+          text-align: center;
+        }
+        &:nth-child(1) {
+          width: 11%;
+          top: 2.7em;
+          left: -.7em;
+        }
+        &:nth-child(2) {
+          width: 23%;
+        }
+        &:nth-child(3) {
+          width: 5%;
+          top: 7.3em;
+          left: -.8em;
+        }
+        &:nth-child(4) {
+          width: 20%;
+          top: 1em;
+          left: 1em;
+        }
+        &:nth-child(5) {
+          width: 6%;
+          top: 6.4em;
+          left: .5em;
+        }
+        &:nth-child(6) {
+          width: 23%;
+          top: 1.7em;
+          p {
+            margin-top: -1em;
+          }
+        }
+        &:nth-child(7) {
+          width: 12%;
+          top: 11.3em;
+        }
+      }
+    }
+  }
+  &._5 {
+    padding-top: 5em;
+    background: url("../img/section5-bg.png") no-repeat center, linear-gradient(to bottom, $primary-color, $secondary-color);
+    background-size: cover, contain;
+    .page-container {
+      background: url("../img/section5-img.png") no-repeat 100% 100%;
+      background-size: contain;
+    }
+    .hgroup {
+      text-transform: uppercase;
+      width: 50%;
+      padding-top: 7em;
+      p {
+        margin-bottom: 1.2em;
+        line-height: 1.2em;
+        margin-right: 6em;
+        text-align: justify;
+        &:first-of-type {
+          margin-top: 2.5em;
+        }
+      }
+      .dich-btn {
+        margin: 2.7em 0 6.3em 4.6em;
+      }
+    }
+  }
+  &._6 {
+    padding: 4.7em 0 4.5em;
+    .hgroup {
+      background: url("../img/section6-img.svg") no-repeat 0 100%;
+      background-size: contain;
+      padding-left: 53.5%;
+      padding-bottom: 8.5em;
+      h2 {
+        font-size: 3.6em;
+        font-weight: 700;
+        margin-top: 1.7em;
+        margin-bottom: .7em;
+      }
+      p {
+        font-size: 2.1em;
+        text-align: justify;
+        padding-right: 3.1em;
+        line-height: 1.2;
+        margin-bottom: 1.5em;
+      }
+      .dich-btn {
+        margin-left: 3.7em;
+      }
+    }
+    .figure-gallery {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &._7 {
+    background: linear-gradient(120deg, $secondary-color, $primary-color);
+    padding: 5.8em 0 2.5em;
+    .page-container {
+      background: url("../img/section7-img.png") no-repeat 10%;
+      background-size: contain;
+    }
+    .hgroup {
+      padding: 0 5em 8.8em 51.6%;
+      h2 {
+        font-family: "Europe Bold Italic", Roboro, sans-serif;
+        font-size: 4.5em;
+        text-transform: uppercase;
+        margin-top: 2em;
+        margin-bottom: .4em;
+        small {
+          text-transform: none;
+          font-size: .5em;
+          margin-left: 1.4em;
+        }
+      }
+      p {
+        margin-top: 3.1em;
+        margin-right: 2em;
+        text-align: center;
+        line-height: .9;
+        strong {
+          font-size: 2.6em;
+        }
+        span, strong {
+          display: block;
+        }
+        span {
+          margin-top: 1.3em;
+        }
+      }
+    }
+    .get-dich {
+      font-size: 3em;
+      margin-left: 1.5em;
+      a:first-of-type {
+        margin-right: .46em;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  body {
+    font-size: 1vw;
+  }
+}
+
+@media all and (orientation: landscape) {
+  .dich-section {
+    &._1 {
+      display: flex;
+      min-height: 100vh;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "html-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/remryahirev/html-boilerplate.git"
+  },
+  "author": "RemRyahirev <remryahirev@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/remryahirev/html-boilerplate#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-file-include": "^1.0.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.4.0",
+    "sass-lint": "^1.8.2"
+  }
+}

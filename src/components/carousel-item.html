@@ -1,0 +1,11 @@
+<div class="item @if (n == 0) { active }">
+    <ul class="dich-slider">
+        @for (var i = n * 8 + 1; i < n * 8 + 9; i++) {
+            <li>
+                <figure>
+                    <img src="./img/slider/`+i+`.svg" alt="" height="auto" width="100%">
+                </figure>
+            </li>
+        }
+    </ul>
+</div>
